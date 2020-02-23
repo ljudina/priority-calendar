@@ -1,0 +1,1 @@
+export const statuses = { opened: "Opened", in_progress: "In Progress", closed: "Closed" };
