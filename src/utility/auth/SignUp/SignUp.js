@@ -19,7 +19,7 @@ import Copyright from '../../Copyright';
 import signUpStyles from './SignUpStyles';
 import PopUpMessage from '../../../shared/popUpMessage';
 
-const SignUp = props => {
+export const SignUp = props => {
   //Set classes
   const classes = signUpStyles();
   //Init user

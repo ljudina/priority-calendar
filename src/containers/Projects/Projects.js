@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Projects = (props) => {
+export const Projects = (props) => {
   const classes = useStyles();
   const [openDialog, setOpenDialog] = useState(false);
   const [projectDeletingId, setProjectDeleting] = useState(null);

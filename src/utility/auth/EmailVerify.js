@@ -55,7 +55,7 @@ const DialogActions = withStyles(theme => ({
   },
 }))(MuiDialogActions);
 
-const EmailVerify = (props) => {
+export const EmailVerify = (props) => {
   //Set classes
   const classes = makeStyles(styles);  
   const logoutHandler = () => {

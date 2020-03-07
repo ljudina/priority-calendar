@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Tasks = (props) => {
+export const Tasks = (props) => {
   const classes = useStyles();
   const [openDialog, setOpenDialog] = useState(false);
   const [taskDeletingId, setTaskDeleting] = useState(null);

@@ -62,7 +62,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ForgotPassword = props => {
+export const ForgotPassword = props => {
   //Set classes
   const classes = useStyles();
   //Init email

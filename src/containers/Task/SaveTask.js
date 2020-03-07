@@ -28,7 +28,7 @@ import Select from '@material-ui/core/Select';
 
 import {validateData} from '../../utility/validation';
 
-const SaveTask = (props) => {
+export const SaveTask = (props) => {
   const classes = saveTaskStyles();
 
   const initTask = {

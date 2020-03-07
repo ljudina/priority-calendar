@@ -6,21 +6,21 @@ export const validate = (value, rules) => {
     }
     
     if (rules.required) {
-        isValid = value.trim() !== '' && isValid;
+        isValid = value !== null && typeof(value) !== 'object' && value.trim() !== '' && isValid;
         if(!isValid){
             errorMessage = rules.required.errorMessage;
         }
     }
 
     if (rules.minLength && isValid) {
-        isValid = value.length >= rules.minLength && isValid;
+        isValid = value !== null && typeof(value) !== 'object' && value.length >= rules.minLength && isValid;
         if(!isValid){
             errorMessage = rules.minLength.errorMessage;
         }        
     }
 
     if (rules.maxLength && isValid) {
-        isValid = value.length <= rules.maxLength && isValid;
+        isValid = value !== null && typeof(value) !== 'object' && value.length <= rules.maxLength && isValid;
         if(!isValid){
             errorMessage = rules.maxLength.errorMessage;
         }
@@ -28,15 +28,16 @@ export const validate = (value, rules) => {
 
     if (rules.isEmail && isValid) {
         const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-        isValid = pattern.test(value) && isValid
+        isValid = value !== null && typeof(value) !== 'object' && pattern.test(value) && isValid;
         if(!isValid){
             errorMessage = rules.isEmail.errorMessage;
         }        
     }
 
     if (rules.isNumeric && isValid) {
-        const numberPattern = /^\d+$/;
-        isValid = numberPattern.test(value) && isValid;
+        /* This matches any real number, with optional decimal point and numbers after the decimal, and optional positive (+) or negative (-) designation. */
+        const numberPattern = /^[-+]?\d+(\.\d+)?$/;
+        isValid = value !== null && typeof(value) !== 'object' && numberPattern.test(value) && isValid;
         if(!isValid){
             errorMessage = rules.isNumeric.errorMessage;
         }                
@@ -44,7 +45,7 @@ export const validate = (value, rules) => {
 
     if (rules.isDate && isValid) {      
         const date = new Date(value);
-        isValid = date.toString() !== "Invalid Date" && isValid;
+        isValid = value !== null && typeof(value) !== 'object' && date.toString() !== "Invalid Date" && isValid;
         if(!isValid){
             errorMessage = rules.isDate.errorMessage;
         }
@@ -52,7 +53,7 @@ export const validate = (value, rules) => {
 
     if (rules.isFixedValue && isValid) {
         if(value){
-            isValid = rules.isFixedValue.validValues.includes(value) && isValid;
+            isValid = value !== null && typeof(value) !== 'object' && rules.isFixedValue.validValues.includes(value) && isValid;
             if(!isValid){
                 errorMessage = rules.isFixedValue.errorMessage;
             }   

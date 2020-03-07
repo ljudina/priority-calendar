@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Project = (props) => {
+export const Project = (props) => {
   const classes = useStyles();
   const [openDialog, setOpenDialog] = useState(false);
   const [projectDeletingId, setProjectDeleting] = useState(null);
@@ -195,7 +195,6 @@ const Project = (props) => {
 
 const mapStateToProps = state => {
   return {    
-    success: state.project.success,
     error: state.project.error,
     loading: state.project.loading,
     saving: state.project.saving,

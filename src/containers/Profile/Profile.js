@@ -24,7 +24,7 @@ import PopUpMessage from '../../shared/popUpMessage';
 
 import {validateData} from '../../utility/validation';
 
-const Profile = (props) => {
+export const Profile = (props) => {
   const classes = profileStyles();
 
   const initProfile = {

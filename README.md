@@ -31,6 +31,11 @@ npm install
 ```shell
 npm start
 ```
+## Tests
+> There are basic tests on application and you can run it with following command
+```shell
+npm test
+```
 
 ### Connecting to backend (Firebase)
 

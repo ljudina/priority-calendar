@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SignIn = props => {
+export const SignIn = props => {
   //Set classes
   const classes = useStyles();
   //Init demo user

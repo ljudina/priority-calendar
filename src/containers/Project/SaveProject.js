@@ -29,7 +29,7 @@ import {validateData} from '../../utility/validation';
 
 import {types, priorities, statuses} from '../Project/ProjectAtributes';
 
-const Project = (props) => {
+export const SaveProject = (props) => {
   const classes = projectStyles();
 
   const initProject = {
@@ -392,4 +392,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Project);
+export default connect(mapStateToProps, mapDispatchToProps)(SaveProject);
